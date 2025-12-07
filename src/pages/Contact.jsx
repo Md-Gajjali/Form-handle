@@ -11,14 +11,16 @@ const Contact = () => {
   },[])
 
   return (
-    <div>
+    <div className='container m-auto flex flex-wrap justify-between gap-2 py-10 pb-20'>
       {
         product.map((items)=>{
           return(
             <Cards
             
             title={items.title}
-            img={items.}
+            img={items.thumbnail}
+            rating={items.rating}
+            price={items.price}
             
             />
 

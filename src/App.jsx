@@ -4,10 +4,15 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navber from './Compoents/Navber'
 import Cards from './Compoents/Cards'
+import { useSelector, useDispatch } from 'react-redux'
+import { decrement, increment } from '../src/Slices/counterSlice'
 
 function App() {
 
   const[recipes,setRecipes]=useState([]);
+  const count = useSelector((state)=> state.counter.value )
+  const dispatch = useDispatch()
+
 
   useEffect(()=>{
     fetch('https://dummyjson.com/recipes')
@@ -32,6 +37,23 @@ function App() {
           )
         })
       }
+      <div>
+      <div>
+        <button
+          aria-label="Increment value"
+          onClick={() => dispatch(increment())}
+        >
+          Increment
+        </button>
+        <span>{count}</span>
+        <button
+          aria-label="Decrement value"
+          onClick={() => dispatch(decrement())}
+        >
+          Decrement
+        </button>
+      </div>
+    </div>
     </div>
     </>
   )
