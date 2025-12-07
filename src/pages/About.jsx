@@ -12,7 +12,7 @@ const About = () => {
   },[])
 
   return (
-    <div className='container m-auto flex flex-wrap justify-between py-10 pb-20'>
+    <div className='container m-auto flex flex-wrap justify-between gap py-10 pb-20'>
       {
         recipes.map((items)=>{
           return(
