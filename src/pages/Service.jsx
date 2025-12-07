@@ -13,7 +13,14 @@ const Service = () => {
 
   return (
     <div>
-      <Cards />
+      {
+        recipes.map((items)=>{
+          return(
+
+            <Cards />
+          )
+        })
+      }
     </div>
   )
 }
